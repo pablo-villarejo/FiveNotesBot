@@ -1,3 +1,5 @@
+# audio/builder.py
+
 from pydub import AudioSegment
 import os
 
@@ -15,6 +17,10 @@ def build_audio(instrument: str, notes: list[str], output_path="output/sonido.wa
         sample = AudioSegment.from_wav(path)
         audio += sample
 
+    # Agregar 1s de silencio al inicio y al final
+    silence = AudioSegment.silent(duration=1000)  # 1s
+    final_audio = silence + audio + silence
+
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    audio.export(output_path, format="wav")
+    final_audio.export(output_path, format="wav")
     print(f"[✔] Audio generado: {output_path}")
