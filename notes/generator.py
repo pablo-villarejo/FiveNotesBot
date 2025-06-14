@@ -1,6 +1,7 @@
 import random
 
-INSTRUMENTS = ["piano", "guitarra", "voz", "trompeta"]
+# INSTRUMENTS = ["piano", "guitarra", "voz", "trompeta"]
+INSTRUMENTS = ["piano"]
 NOTES = ["C", "D", "E", "F", "G", "A", "B"]
 OCTAVES = [3, 4, 5]
 
